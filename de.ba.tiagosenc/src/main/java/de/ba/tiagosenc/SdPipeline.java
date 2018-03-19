@@ -54,7 +54,7 @@ public class SdPipeline
 		
 		SdPipeline experiment = new SdPipeline();
 		experiment.runCrossValidation(pSpace);
-//       experiment.runTrainTest(pSpace);
+//        experiment.runTrainTest(pSpace);
 		
 	}
 
@@ -88,7 +88,7 @@ public class SdPipeline
 		Dimension<TcFeatureSet> dimFeatureSets = Dimension.create(
 				DIM_FEATURE_SET,
                 new TcFeatureSet(
-                        TcFeatureFactory.create(ListsCount2.class),
+                        TcFeatureFactory.create(ListsCount.class),
                               TcFeatureFactory.create(LuceneNGram.class,
                         		LuceneNGram.PARAM_NGRAM_LOWER_CASE, true,
                         		LuceneNGram.PARAM_NGRAM_MIN_N, 1,
@@ -114,7 +114,6 @@ public class SdPipeline
         batch.setPreprocessing(getPreprocessing());
         batch.setParameterSpace(pSpace);
         batch.addReport(BatchOwnCVReport.class);
-
 
         // Run
         Lab.getInstance().run(batch);

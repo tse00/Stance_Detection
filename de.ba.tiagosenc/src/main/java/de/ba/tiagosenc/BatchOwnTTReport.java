@@ -24,7 +24,7 @@ public class BatchOwnTTReport
 {
     private final List<String> discriminatorsToExclude = Arrays
             .asList(new String[] { DIM_FILES_VALIDATION, DIM_FILES_TRAINING });
-    private boolean softEvaluation = false;
+    private boolean softEvaluation = true;
     private boolean individualLabelMeasures = true;
 
     @Override

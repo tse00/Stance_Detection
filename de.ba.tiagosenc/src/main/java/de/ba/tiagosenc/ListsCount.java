@@ -34,14 +34,12 @@ import java.util.regex.Pattern;
 //"de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence"
 
 
-
-
 public class ListsCount
 	extends FeatureExtractorResource_ImplBase
 	implements FeatureExtractor
 
 {
-	long favorC = 0L;
+	int favorC = 0;
 	int againstC = 0;
 	int neutralC = 0;
 	
@@ -56,222 +54,102 @@ public class ListsCount
 		Set<String> stopwords = new HashSet<String>();		
 		stopwords.add("yo");
 		
-		List<String> favorInd = new ArrayList<String>();
-				
-				
-	/////////////////////////////////////////////////////////////////////////////////////////////////////
-
-				
-			 
-/*		documentNgrams = NGramUtils.getDocumentNgrams(jcas, ngramLowerCase,
-           filterPartialStopwordMatches, ngramMinN, ngramMaxN, stopwords);*/
-
-/*		for(String a : favorInd.getKeys())  // ????
-			
-			if (documentNgrams.getKeys().contains(a)) {
-				
-				favorC += NGramUtils.getDocumentNgrams(jcas, aTarget, true, false, 1, 2).getCount(keyWord);
-
-			}
-		}	*/
 		
-	////////////////////////////////////////////////////////////////////	
-
-/*    FrequencyDistribution<String> teacherNgrams = new FrequencyDistribution<String>();
+		ArrayList<String> favorInd = new ArrayList<String>(); 
 		
-    for	(Token tk : JCasUtil.select(jcas, Token.class))	{
-		
-		String text = tk.getCoveredText().toLowerCase();
-		
-    	if(tk().contains("T"))	{
-			
-    		for (List<String> ngram : new NGramStringListIterable(toText(selectCovered(Token.class,tt)), minN, maxN)) 
-            {
-    			//List<String> cleanedNgrams = removeSpecialCharacters(ngram);
-                //if (passesNgramFilter(cleanedNgrams, stopwords, filterPartialMatches)) {
-                    String ngramString = StringUtils.join(cleanedNgrams, NGRAM_GLUE);
-                    if (lowerCaseNGrams) {
-                        ngramString = ngramString.toLowerCase();
-                    }
-                    teacherNgrams.inc(ngramString);
-                }
-            }	
-    	}
-    }
-    return teacherNgrams;*/
-	
-	////////////////////////////////////////////////
-	
-/*	        for (List<String> ngram : new NGramStringListIterable(
-                keywordList.toArray(new String[keywordList.size()]), minN, maxN)) {
-            String ngramString = StringUtils.join(ngram, GLUE);
-            documentNgrams.inc(ngramString);
-        }*/
-
-		
-	///////////////////////////////////////////////////////////////////////////
-	
-		//favorInd.add("Mas");
-		//favorInd.add("arturo");
-		//favorInd.add("Mariano_Rajoy");
-
-		favorInd.add("Artur Mas");
+		//favorInd.add("cup");  -> redudant
+		favorInd.add("arturo");
 		favorInd.add("juntspelsi");
-		favorInd.add("cup");
 		favorInd.add("cupnacional");
 		favorInd.add("somrierecup");
 		favorInd.add("governemos");
-
-		ArrayList<String> favorW= new ArrayList<String>();
+		favorInd.add("libertad");
+		favorInd.add("llieure");
+		favorInd.add("independe");
+				
+		favorInd.add("Artur_Mas");
+		favorInd.add("Visca_Catalunya");
+		favorInd.add("fent_historia");
+		favorInd.add("haciendo_historia");
+		favorInd.add("som_la_historia");
 		
-		//favorW.add("Visca Catalunya");
-		favorW.add("libertad");
-		favorW.add("llieure");
-		favorW.add("#Si");
-		//favorW.add("fent historia");
-		//favorW.add("haciendo historia");
-		//favorW.add("som la historia");
-		favorW.add("independecia");
-		favorW.add("independents");
-		favorW.add("independentismo");
+		//favorInd.add("#Si");
 
-		ArrayList<String> favorAll= new ArrayList<String>();
-		
-        favorAll.addAll(favorInd);
-        favorAll.addAll(favorW);
 		
 		ArrayList<String> againstInd = new ArrayList<String>();
 		
-		//againstInd.add("Mariano Rajoy");
 		againstInd.add("Rajoy");
 		againstInd.add("Albiol");
-		//againstInd.add("Albiol_XG");
 		againstInd.add("inesarrimadas");
-		//againstInd.add("arrimadas");
+		//againstInd.add("arrimadas");  -> redudant with inesarrimadas
 		againstInd.add("Rivera");
-		//againstInd.add("Albert Rivera");
-		againstInd.add("miqueliceta");
-		//againstInd.add("iceta");
 		againstInd.add("icelopeta");
-		//againstInd.add("pp");
+		againstInd.add("miqueliceta");
+		//againstInd.add("iceta");  -> redudant with miqueliceta
+		againstInd.add("socialistas");
+		//againstInd.add("pp");  -> redudant with ppopular
 		againstInd.add("ppopular");
 		againstInd.add("plantemoscara");
 		againstInd.add("CiudadanosCs");
 		againstInd.add("ApoderadosCs");
-		//againstInd.add("Cs");
-		//againstInd.add("C's");
-		//againstInd.add("voto naranja");
-		//againstInd.add("partidos constitucionalistas");
+		//againstInd.add("Cs");      -> redudant 
 		againstInd.add("Catsiqueespot");
-		//againstInd.add("catalunya si que es pot");
 		againstInd.add("PSC");
-		againstInd.add("socialistas");
-		againstInd.add("socialismo");
-		//againstInd.add("socialistes_cat");
-
-		ArrayList<String> againstW= new ArrayList<String>();
-
-		againstW.add("Unidos");
-		againstW.add("unida");
-		againstW.add("unidad");
-		againstW.add("indivisible");
-		//againstW.add("viva espana");
-		//againstW.add("Cataluna dentro Espana");
-		againstW.add("juntsmillor");
-		againstW.add("caminemjunts");
-		againstW.add("llamadasqueunen");
+		againstInd.add("Socialismo");
+		againstInd.add("PSC");	
+		againstInd.add("unidos");
+		againstInd.add("unida");
+		//againstInd.add("unidad"); -> redudant with unida
+		againstInd.add("indivisible");
+		againstInd.add("juntsmillor");
+		againstInd.add("caminemjunts");
+		againstInd.add("llamadasqueunen");
 		
-		ArrayList<String> againstAll= new ArrayList<String>();
-		
-		againstAll.addAll(againstInd);
-		againstAll.addAll(againstW);
-        		
-		
-		boolean lowerCaseNGram = true;
-		
-		FrequencyDistribution<String> documentNgrams = new FrequencyDistribution<String>();
-		NGramUtils ngramClass = new NGramUtils();	
-
-		
-/*		for (String text : JCasUtil.toText(JCasUtil.select(jcas, Token.class))) {
- 	
-	//		Pattern p = Pattern.compile("[a-zA-Z0-9_]");
-	//      Pattern p = Pattern.compile("[A-Za-z0-9_áéíóúüçñ]");
-	        
-			Pattern p = Pattern.compile("^[a-zA-Z0-9][a-zA-Z0-9_ ]+$");
-	
-			Matcher m = p.matcher(text);
-			
-	        documentNgrams = NGramUtils.getAnnotationNgrams(jcas, aTarget, true,
-	                false, 1, 2, stopwords);
-			
-			while(m.find()) {				
-
-				for (String keyWord : favorInd) {
-					
-		            if (documentNgrams.getKeys().contains(keyWord.toLowerCase()) && (text).equals(keyWord.toLowerCase())) {
-								
-					//if((text).equals(keyWord.toLowerCase())) { 
-						
-												
-						favorC += documentNgrams.getCount(keyWord);
-												
-						System.out.println(keyWord);
-
-						System.out.println("Count: " + favorC);						
-					}	
-				}
-            }
-		}*/	
-		
-	  
-/*		for (String text : JCasUtil.toText(JCasUtil.select(jcas, Token.class))) {
-			
-	        for(List<String> ngram : new NGramStringListIterable(favorInd, 1, 2)) {
-	        	
-	        	for (String keyWord : ngram) {
-					
-
-		            keyWord = StringUtils.join(ngram, NGRAM_GLUE);
-	                documentNgrams.inc(keyWord);
-
-		            
-		            if(text.equals(keyWord.toLowerCase())){
-		            	
-	            		favorC += documentNgrams.getCount(keyWord);
-	            		
-	    				System.out.println(keyWord);
-	    				System.out.println("Count: " + favorC);
-		            }	
-		        }
-
-	        }
-			
-		}*/
-  
-	    
-		for (String text : JCasUtil.toText(JCasUtil.select(jcas, Token.class))) {
-	    	
-			for (String keyWord : favorInd) {
-
-				if((text).equals(keyWord.toLowerCase())) { 
-																										
-					favorC += NGramUtils.getDocumentNgrams(jcas, aTarget, true, false, 1, 2).getCount(keyWord);
-	
-					System.out.println(keyWord);
-					//System.out.println("Count: " + favorC);
-				}	
-			}					
-        }
-	    
-		System.out.println("\n" + "Total count: " + favorC);	
+		againstInd.add("Mariano_Rajoy");
+		againstInd.add("Ines Arrimadas");
+		againstInd.add("Albiol_XG");		// -> !!!!!!!!!!!
+		againstInd.add("Albert_Rivera");
+		againstInd.add("C's");
+		againstInd.add("voto_naranja");
+		againstInd.add("partidos_constitucionalistas");
+		againstInd.add("catalunya_si_que_es_pot");
+		againstInd.add("socialistes_cat");
+		againstInd.add("viva_espana");
+		againstInd.add("Cataluna_dentro_Espana");
 		
 
+		
+		FrequencyDistribution<String> fd= NGramUtils.getDocumentNgrams(jcas, aTarget, true, false, 1, 2);
+
+		for (String keyWord : favorInd) {
+
+																									
+				favorC += fd.getCount(keyWord.toLowerCase());
+
+				//System.out.println(keyWord);
+				//System.out.println("Count: " + favorC);
+				
+		}
+		
+		//System.out.println("\n" + "Total count favor: " + favorC);	
+
+		for (String keyWord : againstInd) {
+
+																									
+				againstC += fd.getCount(keyWord.toLowerCase());
+
+				//System.out.println(keyWord);
+				//System.out.println("Count: " + againstC);			
+		}	
+		
+		//System.out.println("\n" + "Total count against: " + againstC);	
+
+		
 		Set<Feature> features = new HashSet<Feature>();
 		
         features.add(new Feature(FOR_IND, favorC));		      
-       // features.add(new Feature(AGAINST_IND, againstC, FeatureType.NUMERIC));
-        //features.add(new Feature(NEUTRAL_IND, neutralC, FeatureType.NUMERIC));
+        features.add(new Feature(AGAINST_IND, againstC));
+        //features.add(new Feature(NEUTRAL_IND, neutralC));
 
         return features;
     }	

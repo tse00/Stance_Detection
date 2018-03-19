@@ -43,7 +43,12 @@ public class ListsCountTest {
         				+ "#ApoderadosCs! ¡A por todas ! Ha llegado el día de hacer que Artur "
         				+ "mas dimita por las urnas.");*/
         
-        jcas.setDocumentText("Artur Mas juntspelsi cupnacional");
+
+        jcas.setDocumentText("4ebb9e6db369a6f3d8d4ca62abfe61a3:::De camino a BARCELONA a Colaborar con nuestros compañeros @CiudadanosCs @InesArrimadas @Albert_Rivera #InesPresidenta http://t.co/BG15fEWWgE"
+        		+ "55243fd5b76d3a58b978ddb0d5fb8061:::Mucho ánimo a todos los #ApoderadosCs! ¡A por todas @CiudadanosCs! Ha llegado el día de hacer que Artur Mas dimita por las urnas."
+        		+ "903894bc15aa91055c40d7f5c31503f5:::Y entre quedarse quieto o cagarla, yo siempre he sido de los que prefieren pedir perdon #JuntsPelSi #27S http://t.co/rPRSlYJqWj"); 		
+        		
+        
         engine.process(jcas);
         
         System.out.println();
@@ -55,16 +60,16 @@ public class ListsCountTest {
         ListsCount extractor = new ListsCount();
         Set<Feature> features = extractor.extract(jcas, aTarget);
         
-        Assert.assertEquals(1, features.size());
+        Assert.assertEquals(2, features.size());
                 
         
         for (Feature feature : features) {
 
         	if (feature.getName().equals(FOR_IND)) { 
-                assertFeature(FOR_IND, 1L, feature);  
+                assertFeature(FOR_IND, 2, feature);  
             }
-//            else if (feature.getName().equals(AGAINST_IND))
-//                assertFeature(AGAINST_IND, 2, feature);
+            else if (feature.getName().equals(AGAINST_IND))
+                assertFeature(AGAINST_IND, 5, feature);
 /*            else
             	assertFeature(NEUTRAL_IND, 9, feature); */          
         }
