@@ -1,4 +1,4 @@
-package de.ba.tiagosenc;
+package de.ba.tiagosenc.Reader;
 
 import java.io.File;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package de.ba.tiagosenc;
+package de.ba.tiagosenc.Features;
 
 import java.util.ArrayList;
 import java.util.HashSet;

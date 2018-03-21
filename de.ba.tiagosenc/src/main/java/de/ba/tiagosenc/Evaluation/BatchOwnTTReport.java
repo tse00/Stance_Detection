@@ -1,11 +1,18 @@
-package de.ba.tiagosenc;
+package de.ba.tiagosenc.Evaluation;
 
 import static org.dkpro.tc.core.util.ReportUtils.getDiscriminatorValue;
+
+
+// See MacroFScore class for the calculations
+
+// See EvaluatorBase for the output 
 
 import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+
+import org.dkpro.tc.evaluation.measures.label.MacroFScore;
 
 import org.dkpro.lab.reporting.BatchReportBase;
 import org.dkpro.lab.reporting.FlexTable;

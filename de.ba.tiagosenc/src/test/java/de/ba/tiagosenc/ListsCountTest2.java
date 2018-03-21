@@ -1,15 +1,14 @@
 package de.ba.tiagosenc;
 
+import static de.ba.tiagosenc.Features.ListsCount2.AGAINST_IND;
+import static de.ba.tiagosenc.Features.ListsCount2.FOR_IND;
+import static de.ba.tiagosenc.Features.ListsCount2.NEUTRAL_IND;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngine;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
 import static org.dkpro.tc.testing.FeatureTestUtil.assertFeature;
 
 import java.util.HashSet;
 import java.util.Set;
- 
-import static de.ba.tiagosenc.ListsCount2.FOR_IND;
-import static de.ba.tiagosenc.ListsCount2.AGAINST_IND;
-import static de.ba.tiagosenc.ListsCount2.NEUTRAL_IND;
 
 import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.analysis_engine.AnalysisEngineDescription;
@@ -20,6 +19,7 @@ import org.dkpro.tc.features.ngram.util.NGramUtils;
 import org.junit.Assert;
 import org.junit.Test;
 
+import de.ba.tiagosenc.Features.ListsCount2;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 

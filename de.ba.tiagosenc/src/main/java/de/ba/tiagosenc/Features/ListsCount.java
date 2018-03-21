@@ -1,4 +1,4 @@
-package de.ba.tiagosenc;
+package de.ba.tiagosenc.Features;
 
 import static org.dkpro.tc.core.Constants.NGRAM_GLUE;
 
@@ -96,7 +96,6 @@ public class ListsCount
 		againstInd.add("Catsiqueespot");
 		againstInd.add("PSC");
 		againstInd.add("Socialismo");
-		againstInd.add("PSC");	
 		againstInd.add("unidos");
 		againstInd.add("unida");
 		//againstInd.add("unidad"); -> redudant with unida
@@ -106,8 +105,8 @@ public class ListsCount
 		againstInd.add("llamadasqueunen");
 		
 		againstInd.add("Mariano_Rajoy");
-		againstInd.add("Ines Arrimadas");
-		againstInd.add("Albiol_XG");		// -> !!!!!!!!!!!
+		againstInd.add("Ines_Arrimadas");
+		againstInd.add("Albiol_XG");	
 		againstInd.add("Albert_Rivera");
 		againstInd.add("C's");
 		againstInd.add("voto_naranja");
@@ -133,18 +132,7 @@ public class ListsCount
 		
 		//System.out.println("\n" + "Total count favor: " + favorC);	
 
-		for (String keyWord : againstInd) {
 
-																									
-				againstC += fd.getCount(keyWord.toLowerCase());
-
-				//System.out.println(keyWord);
-				//System.out.println("Count: " + againstC);			
-		}	
-		
-		//System.out.println("\n" + "Total count against: " + againstC);	
-
-		
 		Set<Feature> features = new HashSet<Feature>();
 		
         features.add(new Feature(FOR_IND, favorC));		      

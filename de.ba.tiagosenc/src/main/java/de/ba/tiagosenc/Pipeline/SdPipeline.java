@@ -1,4 +1,4 @@
-package de.ba.tiagosenc;
+package de.ba.tiagosenc.Pipeline;
 
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
 
@@ -24,9 +24,14 @@ import org.dkpro.tc.ml.ExperimentTrainTest;
 import org.dkpro.tc.ml.report.BatchStatisticsCVReport;
 import org.dkpro.tc.ml.report.BatchBasicResultReport;
 import org.dkpro.tc.ml.report.BatchCrossValidationReport;
-import org.dkpro.tc.ml.report.BatchTrainTestReport;
+import org.dkpro.tc.evaluation.confusion.matrix.SmallContingencyTables;
+import org.dkpro.tc.evaluation.confusion.matrix.*;
 import org.dkpro.tc.ml.weka.WekaClassificationAdapter;
 
+import de.ba.tiagosenc.Evaluation.BatchOwnCVReport;
+import de.ba.tiagosenc.Evaluation.BatchOwnTTReport;
+import de.ba.tiagosenc.Features.ListsCount;
+import de.ba.tiagosenc.Reader.ReaderSD;
 import de.tudarmstadt.ukp.dkpro.core.arktools.ArktweetTokenizer;
 import weka.classifiers.functions.SMO;
 
@@ -88,14 +93,14 @@ public class SdPipeline
 		Dimension<TcFeatureSet> dimFeatureSets = Dimension.create(
 				DIM_FEATURE_SET,
                 new TcFeatureSet(
-                        TcFeatureFactory.create(ListsCount.class),
-                              TcFeatureFactory.create(LuceneNGram.class,
+                        TcFeatureFactory.create(ListsCount.class)
+/*                              TcFeatureFactory.create(LuceneNGram.class,
                         		LuceneNGram.PARAM_NGRAM_LOWER_CASE, true,
                         		LuceneNGram.PARAM_NGRAM_MIN_N, 1,
                         		LuceneNGram.PARAM_NGRAM_MAX_N, 3,
                         		LuceneNGram.PARAM_NGRAM_USE_TOP_K, 500,
                         		LuceneNGram.PARAM_NGRAM_STOPWORDS_FILE, "src/main/resources/Data/spanish_stopwords.txt"
-                        		)));				
+                        		)*/));				
 
 		ParameterSpace pSpace = new ParameterSpace(Dimension.createBundle("readers", dimReaders),
 			Dimension.create(DIM_LEARNING_MODE, LM_SINGLE_LABEL),
@@ -114,11 +119,11 @@ public class SdPipeline
         batch.setPreprocessing(getPreprocessing());
         batch.setParameterSpace(pSpace);
         batch.addReport(BatchOwnCVReport.class);
-
         // Run
         Lab.getInstance().run(batch);
 		
 	}
+	
 	
 	// Train-Test
 	protected void runTrainTest(ParameterSpace pSpace) 

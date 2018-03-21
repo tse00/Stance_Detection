@@ -1,6 +1,6 @@
 package de.ba.tiagosenc;
 
-import static de.ba.tiagosenc.ListsCount3.COUNT;
+import static de.ba.tiagosenc.Features.ListsCount3.COUNT;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngine;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
 import static org.dkpro.tc.testing.FeatureTestUtil.assertFeature;
@@ -17,6 +17,7 @@ import org.dkpro.tc.features.ngram.util.NGramUtils;
 import org.junit.Assert;
 import org.junit.Test;
 
+import de.ba.tiagosenc.Features.ListsCount3;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 

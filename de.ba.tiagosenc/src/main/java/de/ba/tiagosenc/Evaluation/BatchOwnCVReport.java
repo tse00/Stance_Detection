@@ -1,4 +1,4 @@
-package de.ba.tiagosenc;
+package de.ba.tiagosenc.Evaluation;
 
 import java.io.File;
 import java.util.HashMap;
