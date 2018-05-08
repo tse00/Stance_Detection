@@ -32,7 +32,7 @@ public class ListsCountFile
 	extends FeatureExtractorResource_ImplBase
 	implements FeatureExtractor
 	
-	{
+{
 	
 	int favorC = 0;
 	int againstC = 0;
@@ -43,6 +43,8 @@ public class ListsCountFile
 	public static final String NEUTRAL_IND = "NeutralIndList";
 	
 	File favorFile = new File("src/main/resources/Lists/List_Favor.txt");
+	File masFile = new File("src/main/resources/Lists/OnlyMasUppercase.txt");
+	
 	File againstFile = new File("src/main/resources/Lists/List_Against.txt");
 
 	
@@ -54,19 +56,8 @@ public class ListsCountFile
 	public Set<Feature> extract(JCas jcas, TextClassificationTarget aTarget) throws TextClassificationException 
 	{
 		
-		mas.add("Mas");
+		FrequencyDistribution<String> fd= NGramUtils.getDocumentNgrams(jcas, aTarget, true, false, 1, 3);
 		
-
-		FrequencyDistribution<String> fd= NGramUtils.getDocumentNgrams(jcas, aTarget, true, false, 1, 2);
-
-//		for (String keyWord : mas) {
-//			
-//			favorC += fd.getCount(keyWord);
-//
-//			System.out.println(keyWord);
-//			System.out.println("Count favor: " + favorC);
-//			
-//		}
         try {
             //text = FileUtils.readLines(tweets);
             
@@ -75,23 +66,30 @@ public class ListsCountFile
                 
 				favorC += fd.getCount(keyWord.toLowerCase());
 				
-				System.out.println(keyWord);
-				System.out.println("Count favor: " + favorC);	
+//				System.out.println(keyWord);
+//				System.out.println("Count favor: " + favorC);	
             }
 			
-            System.out.println("\n" + "Total count favor: " + favorC + "\n");	
+//            System.out.println("\n" + "Total count favor: " + favorC + "\n");	
 
-        }catch (IOException e) {
-        	
-        	try {
-				throw new ResourceInitializationException(e);
-			} catch (ResourceInitializationException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-        }
-
+		} catch (IOException e2) {
+			e2.printStackTrace();
+		}
         
+/*		try {
+			for (String keyWord : FileUtils.readLines(masFile, "UTF-8")) {
+			    mas.add(keyWord);
+
+				favorC += NGramUtils.getDocumentNgrams(jcas, aTarget, false, false, 1, 3).getCount(keyWord);
+
+				System.out.println(keyWord);
+				System.out.println("Count favor: " + favorC);
+				
+			}
+		} catch (IOException e2) {
+			e2.printStackTrace();
+		}*/
+       
         try {
             //text = FileUtils.readLines(tweets);
             
@@ -100,21 +98,15 @@ public class ListsCountFile
                 
                 againstC += fd.getCount(keyWord.toLowerCase());
 				
-				System.out.println(keyWord);
-				System.out.println("Count against: " + againstC);	
+//				System.out.println(keyWord);
+//				System.out.println("Count against: " + againstC);	
             }
 			
-            System.out.println("\n" + "Total count against: " + againstC);	
+//            System.out.println("\n" + "Total count against: " + againstC);	
 
-        }catch (IOException e) {
-        	
-        	try {
-				throw new ResourceInitializationException(e);
-			} catch (ResourceInitializationException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-        }
+		} catch (IOException e2) {
+			e2.printStackTrace();
+		}
 	    
 		Set<Feature> features = new HashSet<Feature>();
 		

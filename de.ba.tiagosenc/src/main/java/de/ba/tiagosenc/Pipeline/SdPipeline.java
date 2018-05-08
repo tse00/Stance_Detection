@@ -14,26 +14,33 @@ import org.apache.uima.resource.ResourceInitializationException;
 import org.dkpro.lab.Lab;
 import org.dkpro.lab.task.Dimension;
 import org.dkpro.lab.task.ParameterSpace;
-import org.dkpro.lab.task.BatchTask.ExecutionPolicy;
 import org.dkpro.tc.api.features.TcFeatureFactory;
 import org.dkpro.tc.api.features.TcFeatureSet;
 import org.dkpro.tc.core.Constants;
 import org.dkpro.tc.features.ngram.LuceneNGram;
 import org.dkpro.tc.ml.ExperimentCrossValidation;
 import org.dkpro.tc.ml.ExperimentTrainTest;
-import org.dkpro.tc.ml.report.BatchStatisticsCVReport;
-import org.dkpro.tc.ml.report.BatchBasicResultReport;
-import org.dkpro.tc.ml.report.BatchCrossValidationReport;
-import org.dkpro.tc.evaluation.confusion.matrix.SmallContingencyTables;
-import org.dkpro.tc.evaluation.confusion.matrix.*;
 import org.dkpro.tc.ml.weka.WekaClassificationAdapter;
 
 import de.ba.tiagosenc.Evaluation.BatchOwnCVReport;
 import de.ba.tiagosenc.Evaluation.BatchOwnTTReport;
+import de.ba.tiagosenc.Features.Baseline;
+import de.ba.tiagosenc.Features.BlankOntology;
 import de.ba.tiagosenc.Features.ListsCount;
+import de.ba.tiagosenc.Features.ListsCountFile;
+import de.ba.tiagosenc.Features.OntPartyPoliticInOne;
+import de.ba.tiagosenc.Features.OntologiesAllSeperate;
+import de.ba.tiagosenc.Features.OntologiesInOne;
+import de.ba.tiagosenc.Features.OntologyOnlyAdjectiv;
+import de.ba.tiagosenc.Features.OntologyOnlyParty;
+import de.ba.tiagosenc.Features.OntologyOnlyPolitician;
+import de.ba.tiagosenc.Features.OntologyPartyPolitc;
 import de.ba.tiagosenc.Reader.ReaderSD;
 import de.tudarmstadt.ukp.dkpro.core.arktools.ArktweetTokenizer;
 import weka.classifiers.functions.SMO;
+
+import org.dkpro.tc.evaluation.confusion.matrix.SmallContingencyTables;
+import org.dkpro.tc.evaluation.evaluator.single.SingleEvaluator;
 
 
 public class SdPipeline 
@@ -44,10 +51,6 @@ public class SdPipeline
 	public static final String FILEPATH_TEST = "src/main/resources/Data/test_tweets_es.txt";
 	public static final String FILEPATH_GOLD_LABELS = "src/main/resources/Data/training_truth_es.txt";
 	
-	/*public static final String FILEPATH_TRAIN = "C:/Users/TSE/Documents/Uni Due/BA/Stance-IberEval2017-training-20170320/training_tweets_es_cut.txt";
-	public static final String FILEPATH_TEST = "C:/Users/TSE/Documents/Uni Due/BA/Stance-IberEval2017-test-20170320/test_tweets_es_cut.txt";
-	public static final String FILEPATH_GOLD_LABELS = "C:/Users/TSE/Documents/Uni Due/BA/Stance-IberEval2017-training-20170320/training_truth_es_cut.txt";
-*/
 	
 	public static void main(String[] args)
 			throws Exception
@@ -58,8 +61,8 @@ public class SdPipeline
 		ParameterSpace pSpace = getParameterSpace();
 		
 		SdPipeline experiment = new SdPipeline();
-		experiment.runCrossValidation(pSpace);
-//        experiment.runTrainTest(pSpace);
+//		experiment.runCrossValidation(pSpace);
+        experiment.runTrainTest(pSpace);
 		
 	}
 
@@ -83,7 +86,7 @@ public class SdPipeline
 		
 		dimReaders.put(DIM_READER_TRAIN, readerTrain);
 	    dimReaders.put(DIM_READER_TEST, readerTest);
-	    
+	   
 		
 	    @SuppressWarnings("unchecked")
 		Dimension<List<String>> dimClassificationArgs = Dimension.create(DIM_CLASSIFICATION_ARGS,
@@ -93,14 +96,21 @@ public class SdPipeline
 		Dimension<TcFeatureSet> dimFeatureSets = Dimension.create(
 				DIM_FEATURE_SET,
                 new TcFeatureSet(
-                        TcFeatureFactory.create(ListsCount.class)
-/*                              TcFeatureFactory.create(LuceneNGram.class,
+                        TcFeatureFactory.create(Baseline.class),
+//                        TcFeatureFactory.create(ListsCountFile.class),
+//                        TcFeatureFactory.create(OntPartyPoliticInOne.class),
+//                        TcFeatureFactory.create(OntologiesInOne.class),
+//                        TcFeatureFactory.create(OntologyOnlyParty.class),
+//                        TcFeatureFactory.create(OntologyOnlyPolitician.class),
+//                        TcFeatureFactory.create(OntologyOnlyAdjectiv.class),
+//                		  TcFeatureFactory.create(BlankOntology.class)
+                              TcFeatureFactory.create(LuceneNGram.class,
                         		LuceneNGram.PARAM_NGRAM_LOWER_CASE, true,
                         		LuceneNGram.PARAM_NGRAM_MIN_N, 1,
                         		LuceneNGram.PARAM_NGRAM_MAX_N, 3,
                         		LuceneNGram.PARAM_NGRAM_USE_TOP_K, 500,
                         		LuceneNGram.PARAM_NGRAM_STOPWORDS_FILE, "src/main/resources/Data/spanish_stopwords.txt"
-                        		)*/));				
+                        	)));				
 
 		ParameterSpace pSpace = new ParameterSpace(Dimension.createBundle("readers", dimReaders),
 			Dimension.create(DIM_LEARNING_MODE, LM_SINGLE_LABEL),
@@ -119,12 +129,15 @@ public class SdPipeline
         batch.setPreprocessing(getPreprocessing());
         batch.setParameterSpace(pSpace);
         batch.addReport(BatchOwnCVReport.class);
+        //batch.addReport(BasicResultsReport);
+      //  batch.addReport(SmallContingencyTables.class);
+
         // Run
         Lab.getInstance().run(batch);
 		
 	}
 	
-	
+
 	// Train-Test
 	protected void runTrainTest(ParameterSpace pSpace) 
 		throws Exception

@@ -48,7 +48,10 @@ public class ReaderSD
         try {
            //text = FileUtils.readLines(tweets);
            
+        	
            for (String tweet : FileUtils.readLines(tweets, "UTF-8")) {
+              // String[] parts = tweet.split(":::");
+
                text.add(tweet);
            }
            
@@ -58,7 +61,7 @@ public class ReaderSD
             for (String line : FileUtils.readLines(goldlabels, "UTF-8")) {
             	
                 String[] parts = line.split(":::");
-
+              
                 gold.add(parts[1]);
                 
             }

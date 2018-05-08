@@ -1,8 +1,8 @@
 package de.ba.tiagosenc;
 
-import static de.ba.tiagosenc.Features.ListsCount2.AGAINST_IND;
-import static de.ba.tiagosenc.Features.ListsCount2.FOR_IND;
-import static de.ba.tiagosenc.Features.ListsCount2.NEUTRAL_IND;
+import static de.ba.tiagosenc.Features.Baseline.AGAINST_IND;
+import static de.ba.tiagosenc.Features.Baseline.FOR_IND;
+import static de.ba.tiagosenc.Features.Baseline.NEUTRAL_IND;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngine;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
 import static org.dkpro.tc.testing.FeatureTestUtil.assertFeature;
@@ -19,11 +19,11 @@ import org.dkpro.tc.features.ngram.util.NGramUtils;
 import org.junit.Assert;
 import org.junit.Test;
 
-import de.ba.tiagosenc.Features.ListsCount2;
+import de.ba.tiagosenc.Features.Baseline;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 
-public class ListsCountTest2 {
+public class BaselineTest {
 	
 	@Test
 	public void ListsExtractorTest() 
@@ -55,7 +55,7 @@ public class ListsCountTest2 {
 		stopwords.add("yo");		
 		
 		
-        ListsCount2 extractor = new ListsCount2();
+        Baseline extractor = new Baseline();
         Set<Feature> features = extractor.extract(jcas, aTarget);
         
         Assert.assertEquals(2, features.size());

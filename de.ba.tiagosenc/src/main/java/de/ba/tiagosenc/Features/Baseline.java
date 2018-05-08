@@ -22,7 +22,7 @@ import java.util.regex.Pattern;
 
 
 
-public class ListsCount2 
+public class Baseline 
 	extends FeatureExtractorResource_ImplBase
 	implements FeatureExtractor
 	
@@ -77,7 +77,6 @@ public class ListsCount2
 		againstInd.add("CiudadanosCs");
 		againstInd.add("ApoderadosCs");
 		//againstInd.add("Cs");      -> redudant 
-		againstInd.add("Catsiqueespot");
 		againstInd.add("PSC");
 		againstInd.add("Socialismo");
 		againstInd.add("PSC");	

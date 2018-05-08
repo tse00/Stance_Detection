@@ -19,7 +19,7 @@ public class BatchOwnCVReport
 {
 	
 	boolean softEvaluation = true;
-	boolean individualLabelMeasures = true;
+	public boolean individualLabelMeasures = true;
 	
 	@Override
 	public void execute()

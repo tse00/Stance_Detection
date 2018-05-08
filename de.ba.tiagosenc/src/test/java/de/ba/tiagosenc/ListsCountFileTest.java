@@ -42,7 +42,7 @@ public class ListsCountFileTest {
         JCas jcas = engine.newJCas();
         jcas.setDocumentLanguage("es");
         
-        jcas.setDocumentText("Mas");
+        jcas.setDocumentText("miqueliceta iceta Mas mas Artur mas");
         engine.process(jcas);
         
         System.out.println();
@@ -59,12 +59,10 @@ public class ListsCountFileTest {
         for (Feature feature : features) {
 
         	if (feature.getName().equals(FOR_IND)) { 
-                assertFeature(FOR_IND, 1, feature);  
+                assertFeature(FOR_IND, 2, feature);  
             }
             else if (feature.getName().equals(AGAINST_IND))
-                assertFeature(AGAINST_IND, 0, feature);
-            else
-            	assertFeature(NEUTRAL_IND, 0, feature);          
+                assertFeature(AGAINST_IND, 2, feature);
         }
 	}
 }
