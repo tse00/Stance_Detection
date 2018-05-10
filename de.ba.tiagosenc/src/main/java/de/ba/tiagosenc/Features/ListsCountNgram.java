@@ -34,7 +34,7 @@ import java.util.regex.Pattern;
 //"de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Sentence"
 
 
-public class ListsCount
+public class ListsCountNgram
 	extends FeatureExtractorResource_ImplBase
 	implements FeatureExtractor
 
@@ -66,6 +66,9 @@ public class ListsCount
 		favorInd.add("libertad");
 		favorInd.add("llieure");
 		favorInd.add("independe");
+		favorInd.add("jxs");
+		favorInd.add("jxsi");
+
 				
 		favorInd.add("Artur_Mas");
 		favorInd.add("Visca_Catalunya");

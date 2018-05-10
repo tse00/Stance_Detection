@@ -26,7 +26,6 @@ import de.ba.tiagosenc.Evaluation.BatchOwnCVReport;
 import de.ba.tiagosenc.Evaluation.BatchOwnTTReport;
 import de.ba.tiagosenc.Features.Baseline;
 import de.ba.tiagosenc.Features.BlankOntology;
-import de.ba.tiagosenc.Features.ListsCount;
 import de.ba.tiagosenc.Features.ListsCountFile;
 import de.ba.tiagosenc.Features.OntPartyPoliticInOne;
 import de.ba.tiagosenc.Features.OntologiesAllSeperate;

@@ -28,7 +28,7 @@ public class ListsCount3
 	@Override
 	public Set<Feature> extract(JCas jcas, TextClassificationTarget target) throws TextClassificationException {
 
-	  listW.add("lliure");
+	  listW.add("jxs");
 	  listW.add("unidad");
 	  listW.add("juntsmillor");
 
