@@ -26,7 +26,7 @@ import de.ba.tiagosenc.Evaluation.BatchOwnCVReport;
 import de.ba.tiagosenc.Evaluation.BatchOwnTTReport;
 import de.ba.tiagosenc.Features.Baseline;
 import de.ba.tiagosenc.Features.BlankOntology;
-import de.ba.tiagosenc.Features.ListsCountFile;
+import de.ba.tiagosenc.Features.Ont2Lists;
 import de.ba.tiagosenc.Features.OntPartyPoliticInOne;
 import de.ba.tiagosenc.Features.OntologiesAllSeperate;
 import de.ba.tiagosenc.Features.OntologiesInOne;
@@ -60,8 +60,8 @@ public class SdPipeline
 		ParameterSpace pSpace = getParameterSpace();
 		
 		SdPipeline experiment = new SdPipeline();
-//		experiment.runCrossValidation(pSpace);
-        experiment.runTrainTest(pSpace);
+		experiment.runCrossValidation(pSpace);
+//        experiment.runTrainTest(pSpace);
 		
 	}
 
@@ -95,13 +95,13 @@ public class SdPipeline
 		Dimension<TcFeatureSet> dimFeatureSets = Dimension.create(
 				DIM_FEATURE_SET,
                 new TcFeatureSet(
-                        TcFeatureFactory.create(Baseline.class),
-//                        TcFeatureFactory.create(ListsCountFile.class),
 //                        TcFeatureFactory.create(OntPartyPoliticInOne.class),
-//                        TcFeatureFactory.create(OntologiesInOne.class),
-//                        TcFeatureFactory.create(OntologyOnlyParty.class),
-//                        TcFeatureFactory.create(OntologyOnlyPolitician.class),
-//                        TcFeatureFactory.create(OntologyOnlyAdjectiv.class),
+//                        TcFeatureFactory.create(Baseline.class),    		
+                        TcFeatureFactory.create(Ont2Lists.class),
+                        TcFeatureFactory.create(OntologiesInOne.class),
+                        TcFeatureFactory.create(OntologyOnlyParty.class),
+                        TcFeatureFactory.create(OntologyOnlyPolitician.class),
+                        TcFeatureFactory.create(OntologyOnlyAdjectiv.class),
 //                		  TcFeatureFactory.create(BlankOntology.class)
                               TcFeatureFactory.create(LuceneNGram.class,
                         		LuceneNGram.PARAM_NGRAM_LOWER_CASE, true,

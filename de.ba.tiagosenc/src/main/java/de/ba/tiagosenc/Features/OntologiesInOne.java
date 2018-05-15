@@ -28,12 +28,9 @@ public class OntologiesInOne
 	
 	public static final String AllKeyWords = "AllKeyWords";
 	
-	File AllFile = new File("src/main/resources/Lists/All.txt");	
-	File masFile = new File("src/main/resources/Lists/OnlyMasUppercase.txt");	
-
+	File AllFile = new File("src/main/resources/Ontologies+Wiki/All.txt");	
 	
 	ArrayList<String> list = new ArrayList<String>();
-	ArrayList<String> mas = new ArrayList<String>();
 
 	
 	public Set<Feature> extract(JCas jcas, TextClassificationTarget aTarget) throws TextClassificationException 
@@ -59,19 +56,6 @@ public class OntologiesInOne
 			e2.printStackTrace();
 		}
 	    
-/*		try {
-			for (String keyWord : FileUtils.readLines(masFile, "UTF-8")) {
-			    mas.add(keyWord);
-
-			    allC += NGramUtils.getDocumentNgrams(jcas, aTarget, false, false, 1, 3).getCount(keyWord);
-
-//				System.out.println(keyWord);
-//				System.out.println("Count favor: " + allC);
-				
-			}
-		} catch (IOException e2) {
-			e2.printStackTrace();
-		}*/
 	    	    
 		Set<Feature> features = new HashSet<Feature>();
 		

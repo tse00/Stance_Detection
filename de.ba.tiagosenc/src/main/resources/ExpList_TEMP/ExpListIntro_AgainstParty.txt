@@ -1,0 +1,76 @@
+partido político
+liberal conservador
+español
+centroderecha
+derecha política
+Alianza Popular
+Gobierno de España
+Mariano Rajoy
+centro reformista
+humanismo cristiano
+PP: partidos mayoritarios de España
+PP: gobierno de España
+PP: Congreso de los Diputados
+PP: Senado
+PP: comunidades autónomas
+PP: Ceuta
+PP: Melilla
+PP: José María Aznar
+PP: Mariano Rajoy
+PP: restablecimiento de la democracia
+PP: PSOE
+PP: Alianza Popular
+PP: Manuel Fraga
+PP: dictadura franquista
+PP: IX Congreso de Alianza Popular
+PP: Partido Liberal
+PP: Democracia Cristiana
+PP: Partido Unido de Alianza Popular
+PP: Ministerio de la Gobernación
+PP: Federación de Alianza Popular
+PP: Centro Democrático y Social
+PP: Unió Valenciana
+PP: Unión del Pueblo Navarro
+PP: Partido Aragonés
+PP: Centro Canario Nacionalista
+PP: Extremadura Unida
+PP: comunidad autónoma
+PP: Partido Popular Europeo
+PP: Internacional Demócrata de Centro
+PP: Unión Internacional Demócrata
+PP: Nuevas Generaciones del Partido Popular
+PP: XVII congreso del partido
+PP: Sevilla
+PP: María Dolores de Cospedal
+PP: Javier Arenas
+PP: Carlos Floriano
+PP: Esteban González Pons
+PP: Pío García Escudero
+PP: Luis Bárcenas
+PP: Esperanza Aguirre
+CS: partido político
+CS: español
+CS: Albert Rivera
+CS: Barcelona
+CS: Ciutadans de Catalunya
+CS: Parlamento Europeo
+CS: Senado
+CS: Congreso de los Diputados
+CS: parlamentos autonómicos
+CS: ayuntamientos
+PSC: catalán
+PSC: español
+PSC: catalán
+PSC: socialdemócrata
+PSC: catalanista
+PSC: federalismo
+PSC: Transición Española
+PSC: Partido Socialista Obrero Español
+PSC: grupo parlamentario
+PSC: Congreso de los Diputados
+PSC: Senado
+PSC: Parlamento Europeo
+PSC: Unitat d'Aran
+PSC: Ciutadans pel Canvi
+PSC: Progrés Municipal
+PSC: catalanista

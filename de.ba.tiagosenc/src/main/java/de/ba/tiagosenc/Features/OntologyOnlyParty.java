@@ -27,8 +27,8 @@ public class OntologyOnlyParty
 	public static final String FAVOR_PARTYONLY = "FavorPartyOnly";
 	public static final String AGAINST_PARTYONLY = "AgainstPartyOnly";
 	
-	File favorParty = new File("src/main/resources/Lists/Only_Parties_Favor.txt");
-	File againstParty = new File("src/main/resources/Lists/Only_Parties_Against.txt");
+	File favorParty = new File("src/main/resources/Ontologies+Wiki/Only_Parties_Favor.txt");
+	File againstParty = new File("src/main/resources/Ontologies+Wiki/Only_Parties_Against.txt");
 	
 	ArrayList<String> favorPartyL = new ArrayList<String>();
 	ArrayList<String> againstPartyL = new ArrayList<String>();

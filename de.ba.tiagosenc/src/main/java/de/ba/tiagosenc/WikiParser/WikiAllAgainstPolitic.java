@@ -19,7 +19,7 @@ public class WikiAllAgainstPolitic {
 		String urlRajoy = "https://es.wikipedia.org/wiki/Mariano_Rajoy";
 		String urlAlbiol = "https://es.wikipedia.org/wiki/Xavier_García_Albiol";
 		String urlInes = "https://es.wikipedia.org/wiki/Inés_Arrimadas"; 
-		String urlRivera = "https://es.wikipedia.org/wiki/Alberto_Rivera"; 
+		String urlRivera = "https://es.wikipedia.org/wiki/Albert_Rivera"; 
 		String urlIceta = "https://es.wikipedia.org/wiki/Miquel_Iceta"; 
 
 		Document docRajoy = Jsoup.connect(urlRajoy).get();
@@ -82,8 +82,9 @@ public class WikiAllAgainstPolitic {
 //				if(link.text().length() > 2 && !(link.text().matches("([^A-Za-záéíóúüçñ]+)"))) {
 				if(linkE.text().length() > 2 && !(linkE.text().matches("(.*)(\\d+)(.*)"))) {
 			
-					//Add to set to ignore duplicates
+//					Add to set to ignore duplicates
 					linkSet.add(linkE.text().toLowerCase());
+					
 				}
 			
 			}

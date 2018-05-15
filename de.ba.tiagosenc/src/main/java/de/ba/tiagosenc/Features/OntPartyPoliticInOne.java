@@ -31,15 +31,13 @@ public class OntPartyPoliticInOne
 	public static final String AGAINST_PP = "AgainstPartyPolitician";
 	
 	
-	File favorPPf = new File("src/main/resources/Lists/All_PP_Favor.txt");	
-	File masFile = new File("src/main/resources/Lists/OnlyMasUppercase.txt");
+	File favorPPf = new File("src/main/resources/Ontologies+Wiki/All_PP_Favor.txt");	
 
-	File againstPPf = new File("src/main/resources/Lists/All_PP_Against.txt");
+	File againstPPf = new File("src/main/resources/Ontologies+Wiki/All_PP_Against.txt");
 	
 	
 	ArrayList<String> favorPPl = new ArrayList<String>();	
 	ArrayList<String> againstPPl = new ArrayList<String>();
-	ArrayList<String> mas = new ArrayList<String>();
 	
 	
 	public Set<Feature> extract(JCas jcas, TextClassificationTarget aTarget) throws TextClassificationException 
@@ -66,19 +64,6 @@ public class OntPartyPoliticInOne
 			e2.printStackTrace();
 		}
 	    
-/*		try {
-			for (String keyWord : FileUtils.readLines(masFile, "UTF-8")) {
-			    mas.add(keyWord);
-
-			    favorPPc += NGramUtils.getDocumentNgrams(jcas, aTarget, false, false, 1, 3).getCount(keyWord);
-
-				System.out.println(keyWord);
-				System.out.println("Count favor: " + favorPPc);
-				
-			}
-		} catch (IOException e2) {
-			e2.printStackTrace();
-		}*/
   
 	    ///////////////////   AGAINST    //////////////////////////
 	    

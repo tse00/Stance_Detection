@@ -19,31 +19,33 @@ cambrils
 vicepresidente
 capitanía general de valencia
 manuela carmena
+antoni fernández teixidó
 francisco álvarez-cascos
 catalunya sí que es pot
 xi legislatura de españa
 vía catalana hacia la independencia
-eslovaquia
 diputado
+electrodomésticos
+rafael luna
 junta de castilla y león
 junta
-steaua de bucarest
 rtve
 convergència democràtica de catalunya
+ángel de la fuente
 palacio de la zarzuela
 x legislatura
 elecciones generales anticipadas
 interior
 servicio militar obligatorio
 junts pel sí
+unión general de trabajadores
+nuevas generaciones
 comité de las regiones
 asamblea nacional catalana
 alberto nuñez feijoo
 esperanza aguirre
-c. d. numancia de soria
 unión de centro democrático
 pontevedra
-real betis balompié
 islas baleares
 més per mallorca
 bipartidismo
@@ -51,11 +53,12 @@ presidencia de la generalidad
 esteban gonzález pons
 abogada
 democracia
-f. c. spartak de moscú
+antonio robles almeida
+estilo braza
 okdiario
 bankia
-último año
 unión europea
+ciudadanos – partido de la ciudadanía
 gitanos rumanos
 universitaria
 elecciones generales
@@ -63,13 +66,13 @@ autonómicas
 rey
 ignacio gonzález
 convergencia democrática de cataluña
-copa de la uefa
 ciudadanos
 mossos
 alfredo prada
 lucía figar
 partido regionalista de cantabria
 inés del río
+serafín marín
 cis
 santiago de compostela
 ciu
@@ -78,10 +81,12 @@ santa pola
 ecofin
 junta de andalucía
 gran manifestación de rechazo
+diputados autonómicos
 estado islámico
 irpf
 tasa de paro
 catalán
+obrera
 nueva canarias
 alianza popular
 pablo iglesias
@@ -98,7 +103,6 @@ congreso
 faro de vigo
 asturias
 rescate europeo
-real sporting de gijón
 andorra
 generalidad de cataluña
 iñigo urkullu
@@ -106,17 +110,18 @@ crisis del euro
 epa
 trama gürtel
 joventut socialista de catalunya
-r. c. celta de vigo
 alfredo pérez rubalcaba
-real madrid c. f. "c"
 vicente martínez-pujalte
 alicante
 villafranca del bierzo
+suiza
 león
+cita requerida
 presidente del gobierno de españa
 estatuto de autonomía de cataluña
 manuel lamela
 luis de guindos
+universidad de helsinki
 alcalde de badalona
 lehendakari
 país vasco
@@ -130,10 +135,12 @@ pedro sánchez
 primeras elecciones autonómicas gallegas
 dolors sabater
 ángel acebes
+la sexta noche
 congreso de los diputados
-octavos de final
+natación
 audiencia provincial
 ministro de la presidencia
+malagueña
 actual estatuto de autonomía de cataluña
 municipales
 cnn
@@ -145,12 +152,11 @@ tribunal superior de justicia de cataluña
 candidatura de unidad popular-llamada constituyente
 consejeros
 papeles de bárcenas
+intereconomía
 parlamento de cataluña
-real madrid c. f. "b"
 fraga
 reformas estructurales
-segunda división
-centrocampista
+templo de debod
 barack obama
 pib
 estatuto de autonomía de galicia
@@ -159,7 +165,6 @@ asamblea nacional de cataluña
 sentencia del tribunal constitucional
 eta
 teatro romea
-real madrid c. f.
 elecciones andaluzas
 principado de asturias
 juan carlos i
@@ -170,7 +175,6 @@ oriol junqueras
 francesc antich
 geroa bai
 club joventut de badalona
-exfutbolista
 cuenca
 francesa
 caso de los ere
@@ -179,23 +183,26 @@ mariano rajoy sobredo
 campaña electoral
 jerez de la frontera
 la sexta
+vallés oriental
+universidad george washington
 tribunal de estrasburgo
 tribunal constitucional
 boe
 salario mínimo interprofesional
+estados unidos
 maría dolores de cospedal
 zona euro
-ciudad real
+francesc de carreras
 déficit presupuestario
 manuel fraga iribarne
 segunda recesión
 alberto fabra
 pablo llarena
 galicia
-primera división
 roger torrent
 spanair
 huelga general en cataluña
+el periódico de catalunya
 pacto social
 irene rigau
 ministra de sanidad, servicios sociales e igualdad
@@ -219,6 +226,7 @@ españa
 subirats
 mataró
 niza
+waterpolo
 izquierda plural
 narcís serra
 álvaro lapuerta
@@ -231,7 +239,6 @@ partido popular de cataluña
 provincia de salamanca
 por cádiz sí se puede
 sistema de partidos
-fútbol base
 comunidad de madrid
 ministro
 atentados terroristas
@@ -243,16 +250,16 @@ ley de consultas de cataluña
 cup
 meritxell borràs
 gobierno
-fase de grupos
 luis moure mariño
 francisco granados
 raül romeva
 sevilla
 huelga educativa general
+universidad ramon llull
 desastre ecológico
 elecciones
+tesis
 carme forcadell
-olympique de marsella
 ayuntamiento
 español
 juan ignacio zoido
@@ -267,29 +274,34 @@ doctrina parot
 forma de gobierno
 comunidades autónomas
 pere navarro
-elche c. f.
 partit dels socialistes de catalunya
 el cese definitivo de la lucha armada
 carles mundó
 federico jiménez losantos
 marea atlántica
+excedencia
 segundo gobierno
 ley de dependencia
+mercedes milá
 rescate financiero
 euskadi ta askatasuna
 barcelona en comú
 jordi sánchez
 ahora madrid
 universidad pablo de olavide
-repesca
 pablo ruz
+caja de ahorros y pensiones de barcelona (“la caixa”)
+cortes generales
 sánchez
 caso en el que estaba implicado su marido
+cútar
 castilla-la mancha
 manuel chaves
 la rioja
 rafael blasco
+cuatro
 patxi lópez
+arcadi espada
 luisa fernanda rudi
 operación lezo
 guerra e invasión
@@ -308,6 +320,8 @@ socialista
 manuel fraga
 anunciaba su abdicación
 susana díaz
+plaza de toros monumental
+ciudadanos de cataluña
 proceso de paz
 javier fernández
 navarra
@@ -320,6 +334,9 @@ desafío soberanista
 badalona
 presidencia de la generalidad de cataluña
 registrador de la propiedad
+la barceloneta
+prohibición de las corridas de toros en cataluña
+inés arrimadas
 dictadura
 encuesta de población activa
 francisco correa
@@ -327,8 +344,8 @@ josé montilla
 dolors bassa
 eh bildu
 caso púnica
-levante u. d.
 independentismo catalán
+twitter
 junts per catalunya
 española
 jaime mayor oreja
@@ -338,28 +355,37 @@ partido popular
 debate televisado
 psoe
 cádiz
-premio lfp
 prima de riesgo
+facultad de derecho esade
+ruth jiménez
 carles puigdemont
+el comecocos
 manuel cobo
 docencia
 ministro de educación y cultura
 mario draghi
 soraya sáenz de santamaría
 parlament de cataluña
+el gran debate
 universidad rey juan carlos
 cope
 maría san gil
 geo
 luis bárcenas
 josé ramón bauzá
+fernando de páramo
+higini clotas
 jornada de reflexión
 ana mato
 george w. bush
 extremadura
 irregularidades del máster
+facebook
 ejecutivo
 josé manuel soria
+la ametlla
+finlandia
+jurista
 luxación
 partit del socialistes
 associació de municipis per la independència
@@ -372,12 +398,12 @@ fiscalía general del estado
 caso de la cooperación
 elecciones municipales
 josep lluís trapero
-malasia
 tengo una pregunta para usted
 xii
 òmnium cultural
 alcanar
 generalidad valenciana
+el gato al agua
 josé antonio ortega lara
 el país
 alianza de los demócratas y liberales
@@ -385,14 +411,12 @@ ministro de administraciones públicas
 prestige
 moción de censura
 la coruña
-copa del atlántico
 foro asturias
 fútbol club barcelona
 esquerra republicana de catalunya
 administración y dirección de empresas
 aragón
 plaza de tetuán
-puertollano
 el mundo
 banco de españa
 gonzalo fernández de la mora
@@ -408,15 +432,15 @@ pedro antonio sánchez
 josé luis barreiro
 rodrigo rato
 diputación de barcelona
+francia
 mayoría absoluta
 accidente de tráfico
 cornellá de llobregat
 baleares
-liga de campeones
 las ramblas
 ministro de justicia
 centro de investigaciones sociológicas
-manolo preciado
 artur mas
+granollers
 juan costa
 sagrada familia

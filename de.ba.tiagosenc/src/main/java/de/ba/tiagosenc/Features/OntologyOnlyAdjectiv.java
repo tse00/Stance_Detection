@@ -28,8 +28,8 @@ public class OntologyOnlyAdjectiv
 	public static final String FAVOR_ADJECTIVONLY = "FavorAdjectivOnly";
 	public static final String AGAINST_ADJECTIVONLY = "AgainstAdjectivOnly";
 
-	File favorAdjectiv = new File("src/main/resources/Lists/Only_Adjectives_Favor.txt");
-	File againstAdjectiv = new File("src/main/resources/Lists/Only_Adjectives_Against.txt");
+	File favorAdjectiv = new File("src/main/resources/Ontologies+Wiki/Only_Adjectives_Favor.txt");
+	File againstAdjectiv = new File("src/main/resources/Ontologies+Wiki/Only_Adjectives_Against.txt");
 
 	ArrayList<String> favorAdjectivL = new ArrayList<String>();
 	ArrayList<String> againstAdjectivL = new ArrayList<String>();

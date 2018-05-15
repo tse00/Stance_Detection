@@ -41,20 +41,18 @@ public class OntologiesAllSeperate
 	public static final String AGAINST_ADJECTIV = "AgainstAdjectiv";
 	
 	
-	File favorParty = new File("src/main/resources/Lists/Only_Parties_Favor.txt");
-	File favorPolitician = new File("src/main/resources/Lists/Only_Politicians_Favor.txt");
-	File masFile = new File("src/main/resources/Lists/OnlyMasUppercase.txt");
-	File favorAdjectiv = new File("src/main/resources/Lists/Only_Adjectives_Favor.txt");
+	File favorParty = new File("src/main/resources/Ontologies+Wiki/Only_Parties_Favor.txt");
+	File favorPolitician = new File("src/main/resources/Ontologies+Wiki/Only_Politicians_Favor.txt");
+	File favorAdjectiv = new File("src/main/resources/Ontologies+Wiki/Only_Adjectives_Favor.txt");
 	
 	
-	File againstParty = new File("src/main/resources/Lists/Only_Parties_Against.txt");
-	File againstPolitician = new File("src/main/resources/Lists/Only_Politicians_Against.txt");
-	File againstAdjectiv = new File("src/main/resources/Lists/Only_Adjectives_Against.txt");
+	File againstParty = new File("src/main/resources/Ontologies+Wiki/Only_Parties_Against.txt");
+	File againstPolitician = new File("src/main/resources/Ontologies+Wiki/Only_Politicians_Against.txt");
+	File againstAdjectiv = new File("src/main/resources/Ontologies+Wiki/Only_Adjectives_Against.txt");
 	
 	
 	ArrayList<String> favorPartyL = new ArrayList<String>();
 	ArrayList<String> favorPoliticianL = new ArrayList<String>();
-	ArrayList<String> mas = new ArrayList<String>();
 	ArrayList<String> favorAdjectivL = new ArrayList<String>();
 	
 	ArrayList<String> againstPartyL = new ArrayList<String>();
@@ -103,19 +101,6 @@ public class OntologiesAllSeperate
 			e2.printStackTrace();
 		}
 	    
-/*		try {
-			for (String keyWord : FileUtils.readLines(masFile, "UTF-8")) {
-			    mas.add(keyWord);
-
-			    favorPoliticianC += NGramUtils.getDocumentNgrams(jcas, aTarget, false, false, 1, 3).getCount(keyWord);
-
-//				System.out.println(keyWord);
-//				System.out.println("Count favor: " + favorPoliticianC);
-				
-			}
-		} catch (IOException e2) {
-			e2.printStackTrace();
-		}*/
 	    
 	    try {
 	        

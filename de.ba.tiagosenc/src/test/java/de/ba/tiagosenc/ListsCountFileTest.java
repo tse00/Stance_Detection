@@ -1,8 +1,8 @@
 package de.ba.tiagosenc;
 
-import static de.ba.tiagosenc.Features.ListsCountFile.AGAINST_IND;
-import static de.ba.tiagosenc.Features.ListsCountFile.FOR_IND;
-import static de.ba.tiagosenc.Features.ListsCountFile.NEUTRAL_IND;
+import static de.ba.tiagosenc.Features.Ont2Lists.AGAINST_IND;
+import static de.ba.tiagosenc.Features.Ont2Lists.FOR_IND;
+import static de.ba.tiagosenc.Features.Ont2Lists.NEUTRAL_IND;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngine;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
 import static org.dkpro.tc.testing.FeatureTestUtil.assertFeature;
@@ -19,7 +19,7 @@ import org.dkpro.tc.features.ngram.util.NGramUtils;
 import org.junit.Assert;
 import org.junit.Test;
 
-import de.ba.tiagosenc.Features.ListsCountFile;
+import de.ba.tiagosenc.Features.Ont2Lists;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 
@@ -50,7 +50,7 @@ public class ListsCountFileTest {
         aTarget.addToIndexes();               
         
 		
-        ListsCountFile extractor = new ListsCountFile();
+        Ont2Lists extractor = new Ont2Lists();
         Set<Feature> features = extractor.extract(jcas, aTarget);
         
         Assert.assertEquals(2, features.size());

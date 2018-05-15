@@ -27,8 +27,8 @@ public class OntologyOnlyPolitician
 	public static final String FAVOR_POLITICIANONLY = "FavorPoliticianOnly";
 	public static final String AGAINST_POLITICIANONLY = "AgainstPoliticianOnly";
 	
-	File favorPolitician = new File("src/main/resources/Lists/Only_Politicians_Favor.txt");
-	File againstPolitician = new File("src/main/resources/Lists/Only_Politicians_Against.txt");
+	File favorPolitician = new File("src/main/resources/Ontologies+Wiki/Only_Politicians_Favor.txt");
+	File againstPolitician = new File("src/main/resources/Ontologies+Wiki/Only_Politicians_Against.txt");
 
 	ArrayList<String> favorPoliticianL = new ArrayList<String>();
 	ArrayList<String> againstPoliticianL = new ArrayList<String>();
