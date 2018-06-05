@@ -37,14 +37,8 @@ public class BaselineTest {
 
         JCas jcas = engine.newJCas();
         jcas.setDocumentLanguage("es");
-/*        jcas.setDocumentText("4ebb9e6db369a6f3d8d4ca62abfe61a3:::De @InesArrimadas Juntspelsi camino a BARCELONA a Colaborar con "
-        		+ "nuestros compañeros @CiudadanosCs  @Albert_Rivera #InesPresidenta "
-        		+ "http://t.co/BG15fEWWgE" + "/n" + "55243fd5b76d3a58b978ddb0d5fb8061:::Mucho ánimo a todos los "
-        				+ "#ApoderadosCs! ¡A por todas ! Ha llegado el día de hacer que Artur "
-        				+ "mas dimita por las urnas.");*/
         
-        jcas.setDocumentText("independents");
-        //jcas.setDocumentText(" yo soy mas llieUre #rajoy @planTemoscara ppopular unidad independents");
+        jcas.setDocumentText("Yo voto ppopular Rajoy. Basta juntspelsi");
         engine.process(jcas);
         
         System.out.println();
@@ -64,10 +58,10 @@ public class BaselineTest {
         for (Feature feature : features) {
 
         	if (feature.getName().equals(FOR_IND)) { 
-                assertFeature(FOR_IND, 2, feature);  
+                assertFeature(FOR_IND, 1, feature);  
             }
             else if (feature.getName().equals(AGAINST_IND))
-                assertFeature(AGAINST_IND, 0, feature);
+                assertFeature(AGAINST_IND, 2, feature);
             else
             	assertFeature(NEUTRAL_IND, 0, feature);          
         }

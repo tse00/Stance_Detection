@@ -16,7 +16,7 @@ import org.dkpro.tc.features.ngram.util.NGramUtils;
 
 import de.tudarmstadt.ukp.dkpro.core.api.frequency.util.FrequencyDistribution;
 
-public class OntologyOnlyParty 
+public class OnlyParty 
 	extends FeatureExtractorResource_ImplBase
 	implements FeatureExtractor
 {
@@ -27,8 +27,8 @@ public class OntologyOnlyParty
 	public static final String FAVOR_PARTYONLY = "FavorPartyOnly";
 	public static final String AGAINST_PARTYONLY = "AgainstPartyOnly";
 	
-	File favorParty = new File("src/main/resources/Ontologies+Wiki/Only_Parties_Favor.txt");
-	File againstParty = new File("src/main/resources/Ontologies+Wiki/Only_Parties_Against.txt");
+	File favorParty = new File("src/main/resources/Lists/Only_Parties_Favor.txt");
+	File againstParty = new File("src/main/resources/Lists/Only_Parties_Against.txt");
 	
 	ArrayList<String> favorPartyL = new ArrayList<String>();
 	ArrayList<String> againstPartyL = new ArrayList<String>();
@@ -39,7 +39,8 @@ public class OntologyOnlyParty
 
 		FrequencyDistribution<String> fd= NGramUtils.getDocumentNgrams(jcas, target, true, false, 1, 3);
 		
-		
+	    ///////////////////   FAVOR    //////////////////////////
+
 	    try {
 	        
 	        for (String keyWord : FileUtils.readLines(favorParty, "UTF-8")) {
@@ -56,6 +57,9 @@ public class OntologyOnlyParty
 		} catch (IOException e2) {
 			e2.printStackTrace();
 		}
+	    
+	    ///////////////////   AGAINST    //////////////////////////
+
 	    
 	    try {
 	        

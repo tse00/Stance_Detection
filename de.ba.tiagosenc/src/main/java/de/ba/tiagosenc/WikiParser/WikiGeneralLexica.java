@@ -35,7 +35,7 @@ public class WikiGeneralLexica {
 		Set<String> linkSet = new HashSet<String>();
 		
 		
-		File listResults = new File ("src/main/resources/ExpList_TEMP/ExpList_GeneralLexica.txt");
+		File listResults = new File ("src/main/resources/Expanded Lists/ExpList_GeneralLexica.txt");
 
 		
 		try (BufferedWriter out = new BufferedWriter(new FileWriter(listResults))) {
@@ -93,7 +93,6 @@ public class WikiGeneralLexica {
 				out.write(linkS);
                 out.write(System.getProperty("line.separator"));
 			}			
-			System.out.println("LinkText: " + linkSet.toString().replace(",", "").replace("[", "").replace("]", "").trim() + "\n");
 		}
 	}
 

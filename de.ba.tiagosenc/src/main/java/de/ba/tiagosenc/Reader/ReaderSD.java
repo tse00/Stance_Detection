@@ -2,7 +2,6 @@ package de.ba.tiagosenc.Reader;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,18 +45,13 @@ public class ReaderSD
         super.initialize(context);
 
         try {
-           //text = FileUtils.readLines(tweets);
            
-        	
            for (String tweet : FileUtils.readLines(tweets, "UTF-8")) {
-              // String[] parts = tweet.split(":::");
 
                text.add(tweet);
            }
            
-        
-            //gold = FileUtils.readLines(goldlabels);
-            
+           
             for (String line : FileUtils.readLines(goldlabels, "UTF-8")) {
             	
                 String[] parts = line.split(":::");
@@ -78,6 +72,7 @@ public class ReaderSD
         
         totalines = 0;
     }
+	
 
 	public boolean hasNext() throws IOException, CollectionException {
 		
@@ -90,18 +85,12 @@ public class ReaderSD
 		return new Progress[] {new ProgressImpl(totalines, text.size(), "tweets")};
 	}
 
+	
 	@Override
 	public void getNext(JCas jCas) throws IOException, CollectionException {
 
 		jCas.setDocumentText(text.get(totalines));
-		
-/*		String[] textWords = text.get(totalines).split(""); 
 				
-		for (int i = 0; i < textWords.length; i++) {
-			
-			jCas.setDocumentText(textWords[i]);
-		}*/
-		
 		DocumentMetaData dmd = DocumentMetaData.create(jCas);
 		dmd.setDocumentTitle("Tweet" + totalines);
 		dmd.setDocumentId(String.valueOf(totalines));
@@ -113,8 +102,8 @@ public class ReaderSD
        
        totalines ++;
 	}
-//return gold.get(totalines);
 
+	
 	public String getTextClassificationOutcome(JCas jcas) throws CollectionException {
 		
 		return gold.get(totalines);

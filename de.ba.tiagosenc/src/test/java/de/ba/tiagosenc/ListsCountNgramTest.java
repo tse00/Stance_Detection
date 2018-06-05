@@ -23,7 +23,7 @@ import de.ba.tiagosenc.Features.ListsCountNgram;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 
-public class ListsCountTest {
+public class ListsCountNgramTest {
 	
 	@Test
 	public void ListsExtractorTest() 
@@ -44,7 +44,8 @@ public class ListsCountTest {
         				+ "mas dimita por las urnas.");*/
         
 
-        jcas.setDocumentText("jxs jxsi Cs"); 		
+        jcas.setDocumentText("Vamos cataluña, despierta, tu voto hoy es muy importante. Hoy puede ser un\r\n" + 
+        		"buen dia. @miqueliceta #27S @socialistes cat"); 		
         		
         
         engine.process(jcas);
@@ -64,10 +65,10 @@ public class ListsCountTest {
         for (Feature feature : features) {
 
         	if (feature.getName().equals(FOR_IND)) { 
-                assertFeature(FOR_IND, 2, feature);  
+                assertFeature(FOR_IND, 0, feature);  
             }
             else if (feature.getName().equals(AGAINST_IND))
-                assertFeature(AGAINST_IND, 1, feature);
+                assertFeature(AGAINST_IND, 2, feature);
 /*            else
             	assertFeature(NEUTRAL_IND, 9, feature); */          
         }

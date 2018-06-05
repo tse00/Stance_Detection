@@ -8,7 +8,6 @@ import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.uima.jcas.JCas;
-import org.apache.uima.resource.ResourceInitializationException;
 import org.dkpro.tc.api.exception.TextClassificationException;
 import org.dkpro.tc.api.features.Feature;
 import org.dkpro.tc.api.features.FeatureExtractor;
@@ -18,7 +17,7 @@ import org.dkpro.tc.features.ngram.util.NGramUtils;
 
 import de.tudarmstadt.ukp.dkpro.core.api.frequency.util.FrequencyDistribution;
 
-public class OntologiesInOne 
+public class InOne 
 	extends FeatureExtractorResource_ImplBase
 	implements FeatureExtractor
 	
@@ -28,7 +27,7 @@ public class OntologiesInOne
 	
 	public static final String AllKeyWords = "AllKeyWords";
 	
-	File AllFile = new File("src/main/resources/Ontologies+Wiki/All.txt");	
+	File AllFile = new File("src/main/resources/Lists/All.txt");	
 	
 	ArrayList<String> list = new ArrayList<String>();
 

@@ -27,7 +27,7 @@ public class WikiAllFavorPolitc {
 		Set<String> linkSet = new HashSet<String>();
 
 		
-		File listResults = new File ("src/main/resources/ExpList_TEMP/ExpList_FavorPolitic.txt");
+		File listResults = new File ("src/main/resources/Expanded Lists/ExpList_FavorPolitic.txt");
 
 		
 		try (BufferedWriter out = new BufferedWriter(new FileWriter(listResults))) {
@@ -50,8 +50,6 @@ public class WikiAllFavorPolitc {
                 out.write(System.getProperty("line.separator"));
 			}
 			
-			System.out.println("LinkText: " + linkSet.toString().replace(",", "").replace("[", "").replace("]", "").trim() + "\n");
-
 		}
 	}
 

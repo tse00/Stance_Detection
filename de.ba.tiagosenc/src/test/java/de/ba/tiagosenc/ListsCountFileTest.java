@@ -1,8 +1,8 @@
 package de.ba.tiagosenc;
 
-import static de.ba.tiagosenc.Features.Ont2Lists.AGAINST_IND;
-import static de.ba.tiagosenc.Features.Ont2Lists.FOR_IND;
-import static de.ba.tiagosenc.Features.Ont2Lists.NEUTRAL_IND;
+import static de.ba.tiagosenc.Features.Lists2.AGAINST_IND;
+import static de.ba.tiagosenc.Features.Lists2.FOR_IND;
+import static de.ba.tiagosenc.Features.Lists2.NEUTRAL_IND;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngine;
 import static org.apache.uima.fit.factory.AnalysisEngineFactory.createEngineDescription;
 import static org.dkpro.tc.testing.FeatureTestUtil.assertFeature;
@@ -19,7 +19,7 @@ import org.dkpro.tc.features.ngram.util.NGramUtils;
 import org.junit.Assert;
 import org.junit.Test;
 
-import de.ba.tiagosenc.Features.Ont2Lists;
+import de.ba.tiagosenc.Features.Lists2;
 import de.tudarmstadt.ukp.dkpro.core.api.segmentation.type.Token;
 import de.tudarmstadt.ukp.dkpro.core.tokit.BreakIteratorSegmenter;
 
@@ -42,7 +42,11 @@ public class ListsCountFileTest {
         JCas jcas = engine.newJCas();
         jcas.setDocumentLanguage("es");
         
-        jcas.setDocumentText("miqueliceta iceta Mas mas Artur mas");
+        jcas.setDocumentText("Hoy voto #ilusión #esperanza #Unión #convivencia #YovotoaInes27S\r\n" + 
+        		"#YoVotoNaranja @CiudadanosCs @InesArrimadas @malonsocs @Albert_Rivera\r\n" + 
+        		"No dejemos q nos hundan. El #27S sal y vota #JuntsPelSi o #CUP, si no\r\n" + 
+        			"lo hacemos, nos quedamos ası́ para siempre."
+        		);
         engine.process(jcas);
         
         System.out.println();
@@ -50,7 +54,7 @@ public class ListsCountFileTest {
         aTarget.addToIndexes();               
         
 		
-        Ont2Lists extractor = new Ont2Lists();
+        Lists2 extractor = new Lists2();
         Set<Feature> features = extractor.extract(jcas, aTarget);
         
         Assert.assertEquals(2, features.size());
@@ -62,7 +66,7 @@ public class ListsCountFileTest {
                 assertFeature(FOR_IND, 2, feature);  
             }
             else if (feature.getName().equals(AGAINST_IND))
-                assertFeature(AGAINST_IND, 2, feature);
+                assertFeature(AGAINST_IND, 4, feature);
         }
 	}
 }

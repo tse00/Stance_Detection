@@ -17,7 +17,7 @@ import org.dkpro.tc.features.ngram.util.NGramUtils;
 
 import de.tudarmstadt.ukp.dkpro.core.api.frequency.util.FrequencyDistribution;
 
-public class OntologyOnlyPolitician 
+public class OnlyPolitician 
 	extends FeatureExtractorResource_ImplBase
 	implements FeatureExtractor
 {
@@ -27,8 +27,8 @@ public class OntologyOnlyPolitician
 	public static final String FAVOR_POLITICIANONLY = "FavorPoliticianOnly";
 	public static final String AGAINST_POLITICIANONLY = "AgainstPoliticianOnly";
 	
-	File favorPolitician = new File("src/main/resources/Ontologies+Wiki/Only_Politicians_Favor.txt");
-	File againstPolitician = new File("src/main/resources/Ontologies+Wiki/Only_Politicians_Against.txt");
+	File favorPolitician = new File("src/main/resources/Lists/Only_Politicians_Favor.txt");
+	File againstPolitician = new File("src/main/resources/Lists/Only_Politicians_Against.txt");
 
 	ArrayList<String> favorPoliticianL = new ArrayList<String>();
 	ArrayList<String> againstPoliticianL = new ArrayList<String>();
@@ -39,6 +39,9 @@ public class OntologyOnlyPolitician
 
 		FrequencyDistribution<String> fd= NGramUtils.getDocumentNgrams(jcas, target, true, false, 1, 3);
 
+	    ///////////////////   FAVOR    //////////////////////////
+
+		
 	    try {
 	        
 	        for (String keyWord : FileUtils.readLines(favorPolitician, "UTF-8")) {
@@ -56,6 +59,9 @@ public class OntologyOnlyPolitician
 			e2.printStackTrace();
 		}
 	    
+
+	    ///////////////////   AGAINST    //////////////////////////
+
 	    try {
 	        
 	        for (String keyWord : FileUtils.readLines(againstPolitician, "UTF-8")) {

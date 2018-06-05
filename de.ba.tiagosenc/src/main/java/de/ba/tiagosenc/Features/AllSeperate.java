@@ -8,7 +8,6 @@ import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.uima.jcas.JCas;
-import org.apache.uima.resource.ResourceInitializationException;
 import org.dkpro.tc.api.exception.TextClassificationException;
 import org.dkpro.tc.api.features.Feature;
 import org.dkpro.tc.api.features.FeatureExtractor;
@@ -18,7 +17,7 @@ import org.dkpro.tc.features.ngram.util.NGramUtils;
 
 import de.tudarmstadt.ukp.dkpro.core.api.frequency.util.FrequencyDistribution;
 
-public class OntologiesAllSeperate
+public class AllSeperate
 	extends FeatureExtractorResource_ImplBase
 	implements FeatureExtractor
 	
@@ -41,14 +40,14 @@ public class OntologiesAllSeperate
 	public static final String AGAINST_ADJECTIV = "AgainstAdjectiv";
 	
 	
-	File favorParty = new File("src/main/resources/Ontologies+Wiki/Only_Parties_Favor.txt");
-	File favorPolitician = new File("src/main/resources/Ontologies+Wiki/Only_Politicians_Favor.txt");
-	File favorAdjectiv = new File("src/main/resources/Ontologies+Wiki/Only_Adjectives_Favor.txt");
+	File favorParty = new File("src/main/resources/Lists/Only_Parties_Favor.txt");
+	File favorPolitician = new File("src/main/resources/Lists/Only_Politicians_Favor.txt");
+	File favorAdjectiv = new File("src/main/resources/Lists/Only_Adjectives_Favor.txt");
 	
 	
-	File againstParty = new File("src/main/resources/Ontologies+Wiki/Only_Parties_Against.txt");
-	File againstPolitician = new File("src/main/resources/Ontologies+Wiki/Only_Politicians_Against.txt");
-	File againstAdjectiv = new File("src/main/resources/Ontologies+Wiki/Only_Adjectives_Against.txt");
+	File againstParty = new File("src/main/resources/Lists/Only_Parties_Against.txt");
+	File againstPolitician = new File("src/main/resources/Lists/Only_Politicians_Against.txt");
+	File againstAdjectiv = new File("src/main/resources/Lists/Only_Adjectives_Against.txt");
 	
 	
 	ArrayList<String> favorPartyL = new ArrayList<String>();

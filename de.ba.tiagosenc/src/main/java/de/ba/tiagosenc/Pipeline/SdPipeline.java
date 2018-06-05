@@ -26,14 +26,12 @@ import de.ba.tiagosenc.Evaluation.BatchOwnCVReport;
 import de.ba.tiagosenc.Evaluation.BatchOwnTTReport;
 import de.ba.tiagosenc.Features.Baseline;
 import de.ba.tiagosenc.Features.BlankOntology;
-import de.ba.tiagosenc.Features.Ont2Lists;
-import de.ba.tiagosenc.Features.OntPartyPoliticInOne;
-import de.ba.tiagosenc.Features.OntologiesAllSeperate;
-import de.ba.tiagosenc.Features.OntologiesInOne;
-import de.ba.tiagosenc.Features.OntologyOnlyAdjectiv;
-import de.ba.tiagosenc.Features.OntologyOnlyParty;
-import de.ba.tiagosenc.Features.OntologyOnlyPolitician;
-import de.ba.tiagosenc.Features.OntologyPartyPolitc;
+import de.ba.tiagosenc.Features.InOne;
+import de.ba.tiagosenc.Features.Lists2;
+import de.ba.tiagosenc.Features.OnlyAdjectiv;
+import de.ba.tiagosenc.Features.OnlyParty;
+import de.ba.tiagosenc.Features.OnlyPolitician;
+import de.ba.tiagosenc.Features.PartyPoliticInOne;
 import de.ba.tiagosenc.Reader.ReaderSD;
 import de.tudarmstadt.ukp.dkpro.core.arktools.ArktweetTokenizer;
 import weka.classifiers.functions.SMO;
@@ -95,13 +93,13 @@ public class SdPipeline
 		Dimension<TcFeatureSet> dimFeatureSets = Dimension.create(
 				DIM_FEATURE_SET,
                 new TcFeatureSet(
-//                        TcFeatureFactory.create(OntPartyPoliticInOne.class),
+//                        TcFeatureFactory.create(PartyPoliticInOne.class),
 //                        TcFeatureFactory.create(Baseline.class),    		
-                        TcFeatureFactory.create(Ont2Lists.class),
-                        TcFeatureFactory.create(OntologiesInOne.class),
-                        TcFeatureFactory.create(OntologyOnlyParty.class),
-                        TcFeatureFactory.create(OntologyOnlyPolitician.class),
-                        TcFeatureFactory.create(OntologyOnlyAdjectiv.class),
+                        TcFeatureFactory.create(Lists2.class),
+//                        TcFeatureFactory.create(InOne.class),
+//                        TcFeatureFactory.create(OnlyParty.class),
+                        TcFeatureFactory.create(OnlyPolitician.class),
+                        TcFeatureFactory.create(OnlyAdjectiv.class),
 //                		  TcFeatureFactory.create(BlankOntology.class)
                               TcFeatureFactory.create(LuceneNGram.class,
                         		LuceneNGram.PARAM_NGRAM_LOWER_CASE, true,
@@ -128,8 +126,6 @@ public class SdPipeline
         batch.setPreprocessing(getPreprocessing());
         batch.setParameterSpace(pSpace);
         batch.addReport(BatchOwnCVReport.class);
-        //batch.addReport(BasicResultsReport);
-      //  batch.addReport(SmallContingencyTables.class);
 
         // Run
         Lab.getInstance().run(batch);

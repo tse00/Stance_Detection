@@ -23,11 +23,11 @@ public class BlankOntology
 	
 {
 	
-	int allC = 0;
+	int blankC = 0;
 	
 	public static final String AllKeyWords = "AllKeyWords";
 	
-	File AllFile = new File("src/main/resources/Lists/BlankList.txt");	
+	File blankFile = new File("src/main/resources/Lists/BlankList.txt");	
 
 	
 	ArrayList<String> list = new ArrayList<String>();
@@ -40,10 +40,10 @@ public class BlankOntology
 
 	    try {
 	        
-	        for (String keyWord : FileUtils.readLines(AllFile, "UTF-8")) {
+	        for (String keyWord : FileUtils.readLines(blankFile, "UTF-8")) {
 	            list.add(keyWord.toLowerCase());
 	            
-				allC += fd.getCount(keyWord.toLowerCase());
+				blankC += fd.getCount(keyWord.toLowerCase());
 			
 	       }
 		} catch (IOException e2) {
@@ -53,7 +53,7 @@ public class BlankOntology
 	    	    
 		Set<Feature> features = new HashSet<Feature>();
 		
-	    features.add(new Feature(AllKeyWords, allC));		      
+	    features.add(new Feature(AllKeyWords, blankC));		      
 	
 	    return features;
 	}	

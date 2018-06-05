@@ -24,6 +24,7 @@ public class WikiAllAgainstParty {
 		Document docCs = Jsoup.connect(urlCs).get();
 		Document docPSC = Jsoup.connect(urlPSC).get();
 		
+		
 		Elements linksPP = docPP.select("p a[href^=\"/wiki/\"]");
 		Elements linksCs = docCs.select("p a[href^=\"/wiki/\"]");
 		Elements linksPSC = docPSC.select("p a[href^=\"/wiki/\"]");
@@ -31,7 +32,7 @@ public class WikiAllAgainstParty {
 		// Set ignore duplicates
 		Set<String> linkSet = new HashSet<String>();
 		
-		File listResults = new File ("src/main/resources/ExpList_TEMP/ExpList_AgainstParty.txt");
+		File listResults = new File ("src/main/resources/Expanded Lists/ExpList_AgainstParty.txt");
 
 		
 		try (BufferedWriter out = new BufferedWriter(new FileWriter(listResults))) {
@@ -75,7 +76,6 @@ public class WikiAllAgainstParty {
 				out.write(linkS);
                 out.write(System.getProperty("line.separator"));
 			}			
-			System.out.println("LinkText: " + linkSet.toString().replace(",", "").replace("[", "").replace("]", "").trim() + "\n");
 		}
 	}
 

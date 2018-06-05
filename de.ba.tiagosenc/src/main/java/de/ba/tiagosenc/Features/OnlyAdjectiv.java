@@ -17,7 +17,7 @@ import org.dkpro.tc.features.ngram.util.NGramUtils;
 
 import de.tudarmstadt.ukp.dkpro.core.api.frequency.util.FrequencyDistribution;
 
-public class OntologyOnlyAdjectiv
+public class OnlyAdjectiv
 	extends FeatureExtractorResource_ImplBase
 	implements FeatureExtractor
 {
@@ -28,8 +28,8 @@ public class OntologyOnlyAdjectiv
 	public static final String FAVOR_ADJECTIVONLY = "FavorAdjectivOnly";
 	public static final String AGAINST_ADJECTIVONLY = "AgainstAdjectivOnly";
 
-	File favorAdjectiv = new File("src/main/resources/Ontologies+Wiki/Only_Adjectives_Favor.txt");
-	File againstAdjectiv = new File("src/main/resources/Ontologies+Wiki/Only_Adjectives_Against.txt");
+	File favorAdjectiv = new File("src/main/resources/Lists/Only_Adjectives_Favor.txt");
+	File againstAdjectiv = new File("src/main/resources/Lists/Only_Adjectives_Against.txt");
 
 	ArrayList<String> favorAdjectivL = new ArrayList<String>();
 	ArrayList<String> againstAdjectivL = new ArrayList<String>();
@@ -39,6 +39,9 @@ public class OntologyOnlyAdjectiv
 	public Set<Feature> extract(JCas jcas, TextClassificationTarget target) throws TextClassificationException {
 		
 		FrequencyDistribution<String> fd= NGramUtils.getDocumentNgrams(jcas, target, true, false, 1, 3);
+
+
+		///////////////////   FAVOR    //////////////////////////
 
 	    try {
 	        
@@ -56,6 +59,9 @@ public class OntologyOnlyAdjectiv
 		} catch (IOException e2) {
 			e2.printStackTrace();
 		}
+	    
+	    ///////////////////   AGAINST    //////////////////////////
+
 	    
 	    try {
 	        

@@ -57,7 +57,7 @@ public class ListsCountNgram
 		
 		ArrayList<String> favorInd = new ArrayList<String>(); 
 		
-		//favorInd.add("cup");  -> redudant
+		favorInd.add("cup"); 
 		favorInd.add("arturo");
 		favorInd.add("juntspelsi");
 		favorInd.add("cupnacional");
@@ -76,32 +76,30 @@ public class ListsCountNgram
 		favorInd.add("haciendo_historia");
 		favorInd.add("som_la_historia");
 		
-		//favorInd.add("#Si");
-
 		
 		ArrayList<String> againstInd = new ArrayList<String>();
 		
 		againstInd.add("Rajoy");
 		againstInd.add("Albiol");
 		againstInd.add("inesarrimadas");
-		//againstInd.add("arrimadas");  -> redudant with inesarrimadas
+		againstInd.add("arrimadas"); 
 		againstInd.add("Rivera");
 		againstInd.add("icelopeta");
 		againstInd.add("miqueliceta");
-		//againstInd.add("iceta");  -> redudant with miqueliceta
+		againstInd.add("iceta");  
 		againstInd.add("socialistas");
-		//againstInd.add("pp");  -> redudant with ppopular
+		againstInd.add("pp");  
 		againstInd.add("ppopular");
 		againstInd.add("plantemoscara");
 		againstInd.add("CiudadanosCs");
 		againstInd.add("ApoderadosCs");
-		//againstInd.add("Cs");      -> redudant 
+		againstInd.add("Cs");      
 		againstInd.add("Catsiqueespot");
 		againstInd.add("PSC");
 		againstInd.add("Socialismo");
 		againstInd.add("unidos");
 		againstInd.add("unida");
-		//againstInd.add("unidad"); -> redudant with unida
+		againstInd.add("unidad"); 
 		againstInd.add("indivisible");
 		againstInd.add("juntsmillor");
 		againstInd.add("caminemjunts");
@@ -131,6 +129,16 @@ public class ListsCountNgram
 				//System.out.println(keyWord);
 				//System.out.println("Count: " + favorC);
 				
+		}
+		
+		for (String keyWord : againstInd) {
+
+			
+			againstC += fd.getCount(keyWord.toLowerCase());
+
+			//System.out.println(keyWord);
+			//System.out.println("Count: " + favorC);
+			
 		}
 		
 		//System.out.println("\n" + "Total count favor: " + favorC);	
