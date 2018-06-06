@@ -20,11 +20,11 @@ import org.dkpro.tc.core.Constants;
 import org.dkpro.tc.features.ngram.LuceneNGram;
 import org.dkpro.tc.ml.ExperimentCrossValidation;
 import org.dkpro.tc.ml.ExperimentTrainTest;
+import org.dkpro.tc.ml.report.BatchCrossValidationReport;
 import org.dkpro.tc.ml.weka.WekaClassificationAdapter;
 
 import de.ba.tiagosenc.Evaluation.BatchOwnCVReport;
 import de.ba.tiagosenc.Evaluation.BatchOwnTTReport;
-import de.ba.tiagosenc.Features.Baseline;
 import de.ba.tiagosenc.Features.BlankOntology;
 import de.ba.tiagosenc.Features.InOne;
 import de.ba.tiagosenc.Features.Lists2;
@@ -40,6 +40,7 @@ import org.dkpro.tc.evaluation.confusion.matrix.SmallContingencyTables;
 import org.dkpro.tc.evaluation.evaluator.single.SingleEvaluator;
 
 
+@SuppressWarnings("unused")
 public class SdPipeline 
 	implements Constants
 {
@@ -53,6 +54,7 @@ public class SdPipeline
 			throws Exception
 	{
 
+		//path to your DKpro Directory
 		System.setProperty("DKPRO_HOME", "C:/Users/TSE/DKPRO_HOME");
 
 		ParameterSpace pSpace = getParameterSpace();
@@ -117,10 +119,14 @@ public class SdPipeline
 		return pSpace;
 	} 
 	
+	BatchCrossValidationReport a = new BatchCrossValidationReport();
+	
+	
 	// Cross-Validation
 	protected void runCrossValidation(ParameterSpace pSpace)
 		throws Exception
 	{
+		
         ExperimentCrossValidation batch = new ExperimentCrossValidation("TwitterStanceCV", 
         		WekaClassificationAdapter.class, 10);
         batch.setPreprocessing(getPreprocessing());
