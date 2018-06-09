@@ -1,5 +1,14 @@
 # Stance_Detection
 
+##Setup:
+
+   - Java 1.8.0_172 (Java 10 is not supported!)
+
+   - dkpro-tc-0.9.0 Framework
+
+
+## Programm Structure:
+
 /src/main/java/de.ba.tiagosenc.Pipeline/SdPipeline.java:
 pipeline to execute the program
 
