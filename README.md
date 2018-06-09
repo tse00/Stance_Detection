@@ -1,6 +1,6 @@
 # Stance_Detection
 
-##Setup:
+## Setup:
 
    - Java 1.8.0_172 (Java 10 is not supported!)
 
